@@ -13,7 +13,7 @@ public static class InAppReviewManager
         var reviewManager = new Google.Play.Review.ReviewManager();
         var requestFlowOperation = reviewManager.RequestReviewFlow();
         yield return requestFlowOperation;
-        if(requestFlowOperation.Error != Google.Play.Review.ReviewErrorCode.NoError)
+        if (requestFlowOperation.Error != Google.Play.Review.ReviewErrorCode.NoError)
         {
             // Log error. For example, using requestFlowOperation.Error.ToString().
             yield break;
@@ -22,15 +22,14 @@ public static class InAppReviewManager
         var launchFlowOperation = reviewManager.LaunchReviewFlow(playReviewInfo);
         yield return launchFlowOperation;
         playReviewInfo = null; // Reset the object
-        if(launchFlowOperation.Error != Google.Play.Review.ReviewErrorCode.NoError)
+        if (launchFlowOperation.Error != Google.Play.Review.ReviewErrorCode.NoError)
         {
             // Log error. For example, using requestFlowOperation.Error.ToString().
             yield break;
         }
 #else
         Debug.Log("RequestReview Not supported.");
+        yield break;
 #endif
-
     }
-
 }
