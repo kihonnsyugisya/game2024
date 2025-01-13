@@ -11,3 +11,16 @@ public enum Language
     pt = 5, // ポルトガル語
     ru = 6, // ロシア語
 }
+
+public enum PlayerSE
+{
+    punch = 0, // パンチ（素振り）
+    punchHitS = 1, // パンチ（小）
+    punchHitM = 2, // パンチ（中）
+    punchHitL = 3, // パンチ（大）
+}
+
+public enum Respown
+{
+    normal = 0, 
+}
